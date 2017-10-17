@@ -7,6 +7,16 @@ RUN go get github.com/AsynkronIT/protoactor-go/... &&\
     make
 RUN apt-get -qq update &&\
     apt-get -y install -qq swig3.0 &&\
+    rm -rf /var/lib/apt/lists/* &&\
     ln -s /usr/bin/swig3.0 /usr/bin/swig
 WORKDIR /go/src/github.com/rolevax/ih/
+RUN go get github.com/fatih/camelcase &&\
+    go get github.com/rolevax/sp4g &&\
+    go get github.com/chzyer/readline &&\
+    go get github.com/go-pg/pg &&\
+    go get github.com/AsynkronIT/protoactor-go/actor &&\
+    go get github.com/howeyc/gopass &&\
+    go get github.com/emicklei/go-restful &&\
+    go get github.com/dgrijalva/jwt-go &&\
+    go get gopkg.in/redis.v5
 
