@@ -14,9 +14,8 @@ RUN go get github.com/fatih/camelcase &&\
     go get github.com/rolevax/sp4g &&\
     go get github.com/chzyer/readline &&\
     go get github.com/go-pg/pg &&\
-    go get github.com/AsynkronIT/protoactor-go/actor &&\
     go get github.com/howeyc/gopass &&\
     go get github.com/emicklei/go-restful &&\
     go get github.com/dgrijalva/jwt-go &&\
-    go get gopkg.in/redis.v5
+    go get github.com/go-redis/redis
 
