@@ -1,4 +1,4 @@
 Automated Docker build of the Pancake Mahjong server's development environment.
 
-2017-10-17
+2018-01-06
 
