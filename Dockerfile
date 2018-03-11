@@ -18,5 +18,6 @@ RUN go get github.com/fatih/camelcase &&\
     go get github.com/emicklei/go-restful &&\
     go get github.com/dgrijalva/jwt-go &&\
     go get github.com/go-redis/redis &&\
-    go get github.com/importcjj/sensitive
+    go get github.com/importcjj/sensitive &&\
+    go get github.com/microcosm-cc/bluemonday
 
