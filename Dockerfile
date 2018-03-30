@@ -1,12 +1,15 @@
-FROM golang
+FROM golang:1.10
 COPY ./protoc/bin/protoc /bin/protoc
 COPY ./protoc/include /usr/local/include/
 RUN go get github.com/AsynkronIT/protoactor-go/... &&\
     cd $GOPATH/src/github.com/AsynkronIT/protoactor-go &&\
     go get ./... &&\
     make
-RUN apt-get -qq update &&\
-    apt-get -y install -qq swig3.0 &&\
+RUN echo 'deb http://deb.debian.org/debian testing main' >> /etc/apt/sources.list &&\
+    apt -qq update &&\
+    apt -y install -qq swig3.0 &&\
+    apt -y install -qq -t testing g++ &&\
+    apt -y autoremove &&\
     rm -rf /var/lib/apt/lists/* &&\
     ln -s /usr/bin/swig3.0 /usr/bin/swig
 WORKDIR /go/src/github.com/rolevax/ih/
